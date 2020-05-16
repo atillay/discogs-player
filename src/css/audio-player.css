@@ -1,0 +1,112 @@
+.audio-player-main {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #333;
+    color: #fff;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.audio-player-container {
+    display: flex;
+    max-width: 1288px;
+    margin: auto;
+    padding: 0 28px;
+}
+
+.audio-playlist{
+    display: flex;
+    align-items: center;
+}
+.audio-cover {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+}
+.audio-cover svg {
+    width: 82%;
+    margin-top: 9%;
+    margin-left: 9%;
+}
+.audio-cover svg .fill-path {
+    fill: #333;
+    fill-rule:nonzero
+}
+.audio-cover img {
+    width: 100%;
+}
+.audio-informations {
+    margin-left: 12px;
+    width: 200px;
+}
+
+.audio-picker {
+    position: relative;
+}
+.audio-picker-toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+.audio-picker-toggle-count {
+    font-size: 1.2em;
+    margin-left: 12px;
+}
+.audio-picker-toggle {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+.audio-picker-toggle svg { height: 30px; fill: #fff; }
+.audio-picker-list {
+    position: absolute;
+    bottom: calc(100% + 14px);
+    left: -8px;
+    background: #333;
+    list-style: none;
+    margin: 0;
+    padding: 0 14px;
+    width: 300px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.audio-picker-list li {
+    cursor: pointer;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+}
+.audio-picker-list li:last-child {
+    border-bottom: 0;
+}
+.audio-picker-list svg {
+    height: 18px;
+    fill: #fff;
+    margin-right: 8px;
+}
+
+/**************************************************************
+ * Override /node_modules/react-h5-audio-player/lib/styles.css
+ */
+.rhap_container {
+    box-shadow: none; margin-right: 10px;
+    background: #333;
+    color: #fff;
+}
+.rhap_container,
+.rhap_container button,
+.rhap_progress-container,
+.rhap_volume-bar-area {
+    outline: none
+}
+.rhap_time,
+.rhap_volume-button,
+.rhap_main-controls-button {
+    color: #fff;
+}
+.rhap_progress-bar, .rhap_progress-bar-show-download { background-color: #999999 }
+.rhap_download-progress { background-color: #737272; }
+.rhap_progress-filled, .rhap_progress-indicator { background-color: #eee; }
