@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import Rhap from "react-h5-audio-player";
 import AudioPicker from "./AudioPicker";
 
-delete window.document.referrer;
-
 const AudioPlayer = ({playlist = [], vinylMeta = {}}) => {
 
     const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
