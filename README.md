@@ -7,10 +7,10 @@ This Google Chrome extension adds a listen button next to each marketplace track
 ![](screenshot.jpg?raw=true)
 
 Current supported sources are :
-- [www.decks.de](www.decks.de)
-- [www.deejay.de](www.deejay.de)
-- [hardwax.com](hardwax.com)
-- [www.hhv.de](www.hhv.de)
+- [www.decks.de](https://www.decks.de)
+- [www.deejay.de](https://www.deejay.de)
+- [hardwax.com](https://hardwax.com)
+- [www.hhv.de](https://www.hhv.de)
 
 ## Usage
 - `$ npm install & npm run build`
