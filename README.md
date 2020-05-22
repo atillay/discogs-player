@@ -7,15 +7,15 @@ This Google Chrome extension adds a listen button next to each marketplace track
 ![](screenshot.jpg?raw=true)
 
 Current supported sources are :
-- [www.decks.de]()
-- [www.deejay.de]()
-- [hardwax.com]()
-- [www.hhv.de]()
+- [www.decks.de](www.decks.de)
+- [www.deejay.de](www.deejay.de)
+- [hardwax.com](hardwax.com)
+- [www.hhv.de](www.hhv.de)
 
 ## Usage
 - `$ npm install & npm run build`
 - Open Google Chrome and "Load unpacked" extension
-- Visit [https://www.discogs.com/sell/list?style=Techno]() (for example)
+- Visit [https://www.discogs.com/sell/list?style=Techno](https://www.discogs.com/sell/list?style=Techno) (for example)
 
 ## How it works
 1. Extract each vinyl information from the Discogs results page
