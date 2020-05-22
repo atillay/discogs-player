@@ -15,7 +15,7 @@ const extractPlaylistHardwaxCom = (url) => {
                 const playlist = tracks
                     .map(domTrack => ({
                         title: domTrack.getAttribute('title'),
-                        src: domTrack.getAttribute('href') // TODO : fix audio url redirecting (referer suspected)
+                        src: domTrack.getAttribute('href')
                     }));
                 resolve(playlist);
 
