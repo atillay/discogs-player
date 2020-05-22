@@ -10,9 +10,11 @@ const audioPlayerStyles = fs.readFileSync('src/css/audio-player.css', 'utf-8');
 
 const pageUrl = window.location.href;
 
-const isDiscogsListPage = pageUrl.indexOf('https://www.discogs.com') === 0;
-
 const cleanContent = (content) => {
+    // Clean html chars
+    const parser = new DOMParser;
+    const dom = parser.parseFromString(`<!doctype html><body>${content}`, 'text/html');
+    content = dom.body.textContent;
     // Remove content after first parentheses
     if (content.indexOf('(') !== -1) {
         content = content.substring(0, content.indexOf('('))
@@ -24,10 +26,10 @@ const cleanContent = (content) => {
     return content.trim();
 };
 
-const renderPlayer = (injectDom, playlist, coverUrl) => {
+const renderPlayer = (injectDom, playlist, vinylMeta) => {
     ReactDOM.render(
         <ReactShadow.div>
-            <AudioPlayer playlist={playlist} coverUrl={coverUrl}/>
+            <AudioPlayer playlist={playlist} vinylMeta={vinylMeta}/>
             <style type="text/css">
                 {h5audioPlayerStyles}
                 {audioPlayerStyles}
@@ -37,30 +39,24 @@ const renderPlayer = (injectDom, playlist, coverUrl) => {
     );
 };
 const emptyPlayer = (injectDom) => {
-    ReactDOM.render(
-        <div></div>,
-        injectDom
-    );
+    ReactDOM.render(<div/>, injectDom);
 };
 
-if (isDiscogsListPage) {
-
-    // Render player
+const loadDiscogsPlayer = () => {
+    // Append player div
     const injectDOM = document.createElement('div');
     document.body.insertBefore(injectDOM, document.body.firstChild);
 
-    const playButtonsDom = [];
-
-    // Add listen button
+    // Render play buttons
     document.querySelectorAll('.table_block tbody tr').forEach(vinylRow => {
 
-        const vinylTitle = vinylRow.querySelector('.item_description_title').innerHTML;
-        const vinylCover = vinylRow.querySelector('.marketplace_image').getAttribute('src');
+        const vinylFullTitle = vinylRow.querySelector('.item_description_title').innerHTML;
 
-        const vinyl = {
-            title: cleanContent(vinylTitle.split(' - ')[1]),
-            artist: cleanContent(vinylTitle.split(' - ')[0]),
-            label: cleanContent(vinylRow.querySelector('.label_and_cat a').innerHTML)
+        const vinylMeta = {
+            title: cleanContent(vinylFullTitle.split(' - ')[1]),
+            artist: cleanContent(vinylFullTitle.split(' - ')[0]),
+            label: cleanContent(vinylRow.querySelector('.label_and_cat a').innerHTML),
+            cover: vinylRow.querySelector('.marketplace_image, .marketplace_image_placeholder').getAttribute('data-src')
         };
 
         // Play button dom element
@@ -71,13 +67,13 @@ if (isDiscogsListPage) {
             setStatus('loading');
             emptyPlayer(injectDOM);
             chrome.runtime.sendMessage({
-                searchVinyl: vinyl
+                searchVinyl: vinylMeta
             }, {}, (playlist) => {
                 if (!playlist) {
                     setStatus('error')
                 } else {
                     setStatus(null);
-                    renderPlayer(injectDOM, playlist, vinylCover)
+                    renderPlayer(injectDOM, playlist, vinylMeta)
                 }
             });
         };
@@ -86,5 +82,10 @@ if (isDiscogsListPage) {
             playButtomDom
         );
     });
+};
 
-}
+// TODO : load on supported discogs pages only
+// TODO : support single vinyl page
+document.body.onload = () => {
+    loadDiscogsPlayer();
+};

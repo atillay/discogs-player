@@ -2,7 +2,9 @@ import React, {useState} from "react";
 import Rhap from "react-h5-audio-player";
 import AudioPicker from "./AudioPicker";
 
-const AudioPlayer = ({playlist = [], coverUrl = null}) => {
+delete window.document.referrer;
+
+const AudioPlayer = ({playlist = [], vinylMeta = {}}) => {
 
     const [currentAudioIndex, setCurrentAudioIndex] = useState(0);
 
@@ -11,8 +13,8 @@ const AudioPlayer = ({playlist = [], coverUrl = null}) => {
             <div className="audio-player-container">
                 <div className="audio-playlist">
                     <div className="audio-cover">
-                        {coverUrl ? (
-                            <img src={coverUrl} alt="audio image"/>
+                        {vinylMeta.cover ? (
+                            <img src={vinylMeta.cover} alt="audio image"/>
                         ) : (
                             <svg viewBox="0 0 847 1058.75" fillRule="evenodd" clipRule="evenodd">
                                 <path className="fill-path" d="M371 401c6-14 17-25 31-31 13-5 29-6 43 1 15 6 26 17 31 31 6 13 6 29 0 43-6 15-17 26-31 31-13 6-29 6-44 0-14-6-25-17-31-31-5-13-6-29 1-44zm41-5v1c-7 2-12 8-15 15-4 8-3 16 0 22 2 7 8 13 15 16 8 3 16 3 22 0 7-3 13-8 16-16 3-7 3-15 0-22s-8-12-15-15c-8-4-16-3-23-1z"/>
@@ -22,7 +24,7 @@ const AudioPlayer = ({playlist = [], coverUrl = null}) => {
                     </div>
                     <div className="audio-informations">
                         <div>{playlist[currentAudioIndex].title}</div>
-                        <div>{playlist[currentAudioIndex].artist}</div>
+                        <div>{playlist[currentAudioIndex].title.indexOf(vinylMeta.artist) === -1 && vinylMeta.artist}</div>
                     </div>
                 </div>
                 <Rhap

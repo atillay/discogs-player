@@ -35,7 +35,9 @@
     fill-rule:nonzero
 }
 .audio-cover img {
-    width: 100%;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
 }
 .audio-informations {
     margin-left: 12px;

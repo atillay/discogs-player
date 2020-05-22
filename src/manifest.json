@@ -13,20 +13,23 @@
     "scripts": [
       "js/background.js"
     ],
-    "persistent": false
+    "persistent": true
   },
   "content_scripts": [
     {
-      "matches": ["https://*.discogs.com/*"],
+      "matches": ["https://www.discogs.com/*"],
       "js": ["js/script.js"]
     }
   ],
   "permissions": [
     "https://www.google.com/search*",
     "https://www.discogs.com/*",
-    "https://decks.de/*",
-    "https://hardwax.com/*",
-    "https://deejay.de/*",
-    "tabs"
+    "https://www.decks.de/*",
+    "https://*.hardwax.com/*",
+    "https://www.deejay.de/*",
+    "https://www.hhv.de/*",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking"
   ]
 }

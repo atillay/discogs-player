@@ -18,3 +18,9 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     }
 });
 
+// Hardwax fix play audio
+chrome.webRequest.onBeforeSendHeaders.addListener(function (details) {
+    return {
+        requestHeaders: details.requestHeaders.filter(header => header.name !== 'Referer')
+    };
+}, {urls: ["https://media.hardwax.com/*"]}, ["blocking", "requestHeaders", "extraHeaders"]);
