@@ -1,6 +1,6 @@
 # discogs-player
 
-**Work In Progress, suggestions and PR are welcome**
+**BETA - Suggestions and PR are welcome**
 
 This Google Chrome extension adds a listen button next to each marketplace track. If the vinyl is found in one the supported sources, a player will appear with the vinyl tracks audio previews.
 
@@ -15,7 +15,7 @@ Current supported sources are :
 ## Usage
 - `$ npm install & npm run build`
 - Open Google Chrome and "Load unpacked" extension
-- Visit [https://www.discogs.com/sell/list?style=Techno](https://www.discogs.com/sell/list?style=Techno) (for example)
+- Visit a marketplace page : [https://www.discogs.com/sell/list?style=Techno](https://www.discogs.com/sell/list?style=Techno) (for example)
 
 ## How it works
 1. Extract each vinyl information from the Discogs results page

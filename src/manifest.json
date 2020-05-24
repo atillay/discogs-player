@@ -2,8 +2,8 @@
   "name": "Discogs Player",
   "version": "0.1.0",
   "manifest_version": 2,
-  "description": "",
-  "homepage_url": "http://localhost",
+  "description": "Listen to discogs.com vinyls",
+  "homepage_url": "https://github.com/atillay/discogs-player",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
