@@ -1,4 +1,6 @@
 .cache/
 .idea/
-dist/
 node_modules/
+extension/
+extension.pem
+extension.crx

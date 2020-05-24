@@ -92,7 +92,7 @@ const renderPlayButton = (playButtonDom, playerDom, vinylMeta) => {
 const loadDiscogsPlayer = () => {
 
     // Only support sell pages
-    if (pageUrl.indexOf('/sell/') === -1) {
+    if (pageUrl.indexOf('/sell/') === -1 && pageUrl.indexOf('/seller/') === -1) {
         return;
     }
 
