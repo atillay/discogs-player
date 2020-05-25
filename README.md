@@ -14,7 +14,8 @@ Current supported sources are :
 
 ## Usage
 - `$ npm install & npm run build`
-- Open Google Chrome and "Load unpacked" extension
+- The unpacked extension will be created in `./extension` folder
+- Then open [chrome://extensions](chrome://extensions), enable developer mode and "Load unpacked" extension
 - Visit a marketplace page : [https://www.discogs.com/sell/list?style=Techno](https://www.discogs.com/sell/list?style=Techno) (for example)
 
 ## How it works
