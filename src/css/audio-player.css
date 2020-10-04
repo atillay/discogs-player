@@ -73,6 +73,8 @@
     width: 300px;
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
+    max-height: 400px;
+    overflow: scroll;
 }
 .audio-picker-list li {
     cursor: pointer;

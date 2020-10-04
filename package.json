@@ -9,19 +9,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/runtime": "^7.9.6",
+    "@babel/runtime": "^7.11.2",
     "babel-polyfill": "^6.26.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-h5-audio-player": "^3.1.0",
-    "react-shadow": "^18.1.0",
+    "react-h5-audio-player": "^3.4.1",
+    "react-shadow": "^18.4.2",
     "react-svg-spinner": "^1.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-transform-runtime": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-web-extension": "^1.6.1"
   }
