@@ -28,7 +28,6 @@
     "https://*.hardwax.com/*",
     "https://www.deejay.de/*",
     "https://www.hhv.de/*",
-    "tabs",
     "webRequest",
     "webRequestBlocking"
   ]
